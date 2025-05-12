@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to Abdessamad's Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 36px;
+    }
+
+    section {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .category-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .category-buttons button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #ff5722;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .category-buttons button:hover {
+      background-color: #d84f1f;
+    }
+
+    .category-section {
+      display: none;
+      padding: 40px;
+    }
+
+    .category-section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .product p {
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .product button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Abdessamad's Store</h1>
+    <p>Choose a category to explore our products!</p>
+  </header>
+
+  <!-- Category Selection -->
+  <section>
+    <div class="category-buttons">
+      <button onclick="showCategory('clothing')">Clothing</button>
+      <button onclick="showCategory('accessories')">Accessories</button>
+      <button onclick="showCategory('electronics')">Electronics</button>
+    </div>
+  </section>
+
+  <!-- Clothing Section -->
+  <section id="clothing" class="category-section">
+    <h2>Clothing</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Jacket">
+        <h3>Winter Jacket</h3>
+        <p>$49.99</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1580316014900-14d9b1bfae28" alt="T-shirt">
+        <h3>Basic T-shirt</h3>
+        <p>$12.00</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessories Section -->
+  <section id="accessories" class="category-section">
+    <h2>Accessories</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642" alt="Backpack">
+        <h3>Stylish Backpack</h3>
+        <p>$34.99</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1511397744081-57c0f05dc062" alt="Sunglasses">
+        <h3>Black Sunglasses</h3>
+        <p>$15.99</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Electronics Section -->
+  <section id="electronics" class="category-section">
+    <h2>Electronics</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" alt="Drill">
+        <h3>Electric Drill</h3>
+        <p>$79.00</p>
+        <button>Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1590423974061-7a349ff52c9d" alt="Tool Kit">
+        <h3>Tool Kit Set</h3>
+        <p>$59.99</p>
+        <button>Buy Now</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Show the selected category
+    function showCategory(category) {
+      const sections = document.querySelectorAll('.category-section');
+      sections.forEach((section) => {
+        section.classList.remove('active');
+      });
+      
+      const selectedCategory = document.getElementById(category);
+      selectedCategory.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
